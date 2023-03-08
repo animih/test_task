@@ -29,3 +29,15 @@
 Комменатрий : здесь я понял задание так, что на месте n должно стоять число вхождений слова в текст.
 
 Использование скрипта : ./count_top_words.sh filename output_dir
+
+*заупстить скрипт в докер-контейнере*
+Далее приведены команды из терминала, которые требуются для выполнения задачи (иначе не понял как вставить)
+
+Создание контейнера:
+$docker run --name test_container -d -i -t alpine /bin/sh
+
+Копирование текстового файла в котейнер:
+$sudo docker cp dracula.txt test_container:/dracula.txt
+
+Запуска bash-скрипта в контейнере:
+$docker exec -i test_container /bin/sh -s dracula.txt < count_words.sh
