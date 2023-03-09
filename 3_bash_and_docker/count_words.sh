@@ -8,7 +8,7 @@ then
 fi
 
 filename1=$1
-filename2=$2
+
 egrep -o "\b[[:alpha:]]+\b" $filename1 | \
 
 tr -sc '[:alnum:]' '\n'  < $filename1 | tr  '[:upper:'] '[:lower:]' | sort | uniq -c 
